@@ -4,334 +4,354 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-tertiary-fixed": "#001f26",
-                    "on-secondary-container": "#5b3800",
-                    "on-error-container": "#ffdad6",
-                    "primary-container": "#10b981",
-                    "surface": "#161a1d",
-                    "on-background": "#e1e2e5",
-                    "surface-tint": "#4edea3",
-                    "on-primary-fixed": "#002113",
-                    "on-secondary-fixed-variant": "#653e00",
-                    "on-primary": "#003824",
-                    "surface-variant": "#323537",
-                    "secondary-fixed-dim": "#ffb95f",
-                    "surface-container": "#1d2022",
-                    "on-tertiary-container": "#003f4b",
-                    "error-container": "#93000a",
-                    "surface-container-high": "#272a2c",
-                    "primary": "#4edea3",
-                    "error-redstone": "#ef4444",
-                    "surface-dim": "#111416",
-                    "background": "#111416",
-                    "on-surface-variant": "#bbcabf",
-                    "surface-container-low": "#191c1e",
-                    "tertiary-fixed-dim": "#4cd7f6",
-                    "surface-container-highest": "#323537",
-                    "on-primary-fixed-variant": "#005236",
-                    "surface-container-lowest": "#0c0f11",
-                    "primary-fixed": "#6ffbbe",
-                    "on-tertiary": "#003640",
-                    "primary-fixed-dim": "#4edea3",
-                    "secondary": "#ffb95f",
-                    "inverse-on-surface": "#2e3133",
-                    "secondary-fixed": "#ffddb8",
-                    "on-secondary-fixed": "#2a1700",
-                    "on-tertiary-fixed-variant": "#004e5c",
-                    "on-secondary": "#472a00",
-                    "tertiary": "#4cd7f6",
-                    "on-error": "#690005",
-                    "on-primary-container": "#00422b",
-                    "inverse-primary": "#006c49",
-                    "secondary-container": "#ee9800",
-                    "on-surface": "#e1e2e5",
-                    "surface-bright": "#37393c",
-                    "tertiary-container": "#00b2d0",
-                    "tertiary-fixed": "#acedff",
-                    "outline": "#334155",
-                    "outline-variant": "#3c4a42",
-                    "error": "#ffb4ab",
-                    "inverse-surface": "#e1e2e5"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "container-max": "1012px",
-                    "md": "16px",
-                    "section-gap-desktop": "64px",
-                    "xs": "4px",
-                    "lg": "24px",
-                    "base": "4px",
-                    "sm": "8px",
-                    "xl": "32px",
-                    "section-gap-mobile": "40px"
-            },
-            "fontFamily": {
-                    "body-bold": ["Inter"],
-                    "headline-md": ["Montserrat"],
-                    "display-lg-mobile": ["Montserrat"],
-                    "display-lg": ["Montserrat"],
-                    "stat-mono": ["JetBrains Mono"],
-                    "ip-address": ["JetBrains Mono"],
-                    "body-base": ["Inter"],
-                    "label-caps": ["Montserrat"]
-            },
-            "fontSize": {
-                    "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "stat-mono": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "ip-address": ["18px", {"lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500"}],
-                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
-    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
         }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, opacity 0.2s ease-in;
-            opacity: 0;
+        
+        body {
+            background-color: #0e1113;
+            color: #e1e2e5;
+            -webkit-font-smoothing: antialiased;
         }
-        .accordion-item.active .accordion-content {
-            max-height: 2000px;
-            opacity: 1;
-        }
-        .accordion-item.active .chevron-icon {
-            transform: rotate(180deg);
-        }
+
         .ghost-border {
             border: 1px solid #334155;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         .ghost-border:hover {
             border-color: #4edea3;
-            box-shadow: 0 0 10px -2px rgba(78, 222, 163, 0.3);
+            box-shadow: 0 0 15px -2px rgba(78, 222, 163, 0.2);
+        }
+
+        .rule-card {
+            background: #161a1d;
+        }
+
+        .rule-number {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(78, 222, 163, 0.1);
+            color: #4edea3;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e1113;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1d2022;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #323537;
         }
     </style>
-<style>
-        body {
-          min-height: max(884px, 100dvh);
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#323537",
+                      "surface-container-highest": "#323537",
+                      "secondary": "#ffb95f",
+                      "on-surface-variant": "#bbcabf",
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#003640",
+                      "tertiary-container": "#00b2d0",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e1e2e5",
+                      "background": "#111416",
+                      "on-background": "#e1e2e5",
+                      "surface-tint": "#4edea3",
+                      "on-primary-container": "#00422b",
+                      "primary-fixed": "#6ffbbe",
+                      "primary-fixed-dim": "#4edea3",
+                      "tertiary": "#4cd7f6",
+                      "error-redstone": "#ef4444",
+                      "surface-container-lowest": "#0c0f11",
+                      "outline": "#334155",
+                      "surface-container": "#1d2022",
+                      "on-surface": "#e1e2e5",
+                      "secondary-fixed": "#ffddb8",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "on-error": "#690005",
+                      "inverse-on-surface": "#2e3133",
+                      "on-tertiary-container": "#003f4b",
+                      "secondary-container": "#ee9800",
+                      "primary-container": "#10b981",
+                      "on-secondary": "#472a00",
+                      "on-primary-fixed": "#002113",
+                      "surface-bright": "#37393c",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "tertiary-fixed": "#acedff",
+                      "surface": "#161a1d",
+                      "on-secondary-container": "#5b3800",
+                      "on-primary-fixed-variant": "#005236",
+                      "inverse-primary": "#006c49",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "on-tertiary-fixed": "#001f26",
+                      "surface-container-low": "#191c1e",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "surface-container-high": "#272a2c",
+                      "outline-variant": "#3c4a42",
+                      "surface-dim": "#111416",
+                      "on-primary": "#003824",
+                      "primary": "#4edea3",
+                      "on-secondary-fixed": "#2a1700"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "section-gap-mobile": "40px",
+                      "section-gap-desktop": "64px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "container-max": "1012px"
+              },
+              "fontFamily": {
+                      "ip-address": ["JetBrains Mono"],
+                      "headline-md": ["Montserrat"],
+                      "display-lg": ["Montserrat"],
+                      "label-caps": ["Montserrat"],
+                      "body-bold": ["Inter"],
+                      "stat-mono": ["JetBrains Mono"],
+                      "body-base": ["Inter"]
+              },
+              "fontSize": {
+                      "ip-address": ["18px", {"lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "stat-mono": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
         }
-    </style>
+    </script>
 </head>
-<body class="bg-background text-on-surface font-body-base">
+<body class="selection:bg-primary selection:text-on-primary">
 <!-- TopAppBar -->
-<header class="bg-surface-dim dark:bg-surface-dim w-full sticky top-0 z-50 border-b border-outline shadow-none">
+<header class="bg-surface-dim sticky top-0 z-50 border-b border-outline">
 <div class="max-w-[1012px] mx-auto flex justify-between items-center px-lg py-md">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
-<span class="font-display-lg text-headline-md text-primary tracking-tighter uppercase">MINOX</span>
-</div>
-<nav class="hidden md:flex gap-xl">
-<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Главная</a>
-<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Режимы</a>
-<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Магазин</a>
-<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Правила</a>
-<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
-</nav>
-<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-body-bold hover:brightness-110 active:scale-95 transition-all">
+<a class="flex items-center gap-md hover:opacity-80 transition-opacity" href="index.html"><span class="material-symbols-outlined text-primary text-3xl" data-icon="shield_with_heart">shield_with_heart</span><span class="font-display-lg text-display-lg text-primary tracking-tighter uppercase">MINOX</span></a>
+<nav class="hidden md:flex gap-xl items-center"><a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="index.html">Главная</a><a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="modes.html">Режимы</a><a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="shop.html">Магазин</a><a class="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="rules.html">Правила</a></nav>
+<button class="bg-primary text-on-primary-container px-lg py-sm rounded-lg font-headline-md text-sm font-bold uppercase tracking-tight active:scale-95 transition-all">
                 ИГРАТЬ СЕЙЧАС
             </button>
 </div>
 </header>
-<main class="max-w-[1012px] mx-auto px-md md:px-lg py-xl">
+<main class="max-w-[1012px] mx-auto px-lg mt-section-gap-desktop mb-section-gap-desktop">
 <!-- Hero Section -->
-<section class="mb-section-gap-desktop text-center md:text-left relative overflow-hidden rounded-xl p-xl bg-surface-container border border-outline">
-<div class="relative z-10">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-md uppercase">ПРАВИЛА СЕРВЕРА</h1>
-<p class="font-body-base text-on-surface-variant max-w-2xl">
-                    Присоединяясь к MINOX NETWORK, вы соглашаетесь соблюдать следующие правила. Эти правила обеспечивают честную, конкурентную и технически стабильную среду для всех игроков. Незнание правил не освобождает от ответственности.
-                </p>
-</div>
+<section class="mb-xl text-center md:text-left">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-md">ПРАВИЛА СЕРВЕРА</h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl">
+                Свод правил Minox Network создан для обеспечения честной и комфортной игры. Играя на нашем сервере, вы автоматически соглашаетесь с данными пунктами.
+            </p>
 </section>
-<!-- Rules Content (Accordion Style) -->
-<div class="space-y-md">
-<!-- Category 1: General Rules -->
-<div class="accordion-item active ghost-border rounded-xl bg-surface-container transition-all overflow-hidden" id="category-general">
-<button class="w-full flex items-center justify-between p-lg text-left focus:outline-none" onclick="toggleAccordion('category-general')">
-<div class="flex items-center gap-md">
-<span class="material-symbols-outlined text-primary text-3xl">gavel</span>
-<h2 class="font-headline-md text-headline-md">Общие правила</h2>
+<!-- Rules Categories (Bento-style layout) -->
+<div class="flex flex-col gap-xl">
+<!-- General Rules -->
+<div class="rule-card ghost-border rounded-xl overflow-hidden">
+<div class="p-lg bg-surface-container flex items-center gap-md border-b border-outline">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">ОБЩИЕ ПОЛОЖЕНИЯ</h2>
 </div>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform chevron-icon">expand_more</span>
-</button>
-<div class="accordion-content px-lg pb-lg">
-<div class="grid md:grid-cols-2 gap-lg pt-md border-t border-outline-variant">
-<div class="space-y-md">
-<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
-<span class="font-stat-mono text-primary text-sm mb-xs block">1.1</span>
-<h3 class="font-body-bold mb-xs">Регистрация и идентификация</h3>
-<p class="text-on-surface-variant text-sm">Одному игроку разрешен только один аккаунт. Мультиаккаунтинг для обхода банов или фарма ресурсов строго запрещен.</p>
-</div>
-<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
-<span class="font-stat-mono text-primary text-sm mb-xs block">1.2</span>
-<h3 class="font-body-bold mb-xs">Уважение к персоналу</h3>
-<p class="text-on-surface-variant text-sm">Решения, принятые администрацией MINOX, являются окончательными. Оскорбление сотрудников приведет к немедленному перманентному бану.</p>
-</div>
-</div>
-<div class="space-y-md">
-<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
-<span class="font-stat-mono text-primary text-sm mb-xs block">1.3</span>
-<h3 class="font-body-bold mb-xs">Сообщение об ошибках</h3>
-<p class="text-on-surface-variant text-sm">Нашли баг? Немедленно сообщите о нем. Использование глитчей в личных целях считается нарушением 3-й степени.</p>
-</div>
-<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
-<span class="font-stat-mono text-primary text-sm mb-xs block">1.4</span>
-<h3 class="font-body-bold mb-xs">Стороннее ПО</h3>
-<p class="text-on-surface-variant text-sm">Любое стороннее программное обеспечение, дающее несправедливое преимущество (автокликеры, макросы и т.д.), запрещено.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Category 2: Chat Behavior -->
-<div class="accordion-item ghost-border rounded-xl bg-surface-container transition-all overflow-hidden" id="category-chat">
-<button class="w-full flex items-center justify-between p-lg text-left focus:outline-none" onclick="toggleAccordion('category-chat')">
-<div class="flex items-center gap-md">
-<span class="material-symbols-outlined text-secondary text-3xl">chat</span>
-<h2 class="font-headline-md text-headline-md">Поведение в чате</h2>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform chevron-icon">expand_more</span>
-</button>
-<div class="accordion-content px-lg pb-lg">
-<div class="space-y-md pt-md border-t border-outline-variant">
-<div class="flex flex-col md:flex-row gap-md items-start p-md rounded-lg bg-surface-container-low border border-outline-variant">
-<div class="bg-secondary/10 p-sm rounded">
-<span class="material-symbols-outlined text-secondary">warning</span>
-</div>
+<div class="p-lg grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex gap-md group">
+<div class="rule-number h-10 w-10 shrink-0 flex items-center justify-center rounded-lg font-stat-mono text-lg">1.1</div>
 <div>
-<h3 class="font-body-bold mb-xs">Нулевая терпимость: Токсичность</h3>
-<p class="text-on-surface-variant text-sm">Язык вражды, расизм или чрезмерная токсичность в публичных или частных каналах недопустимы. Первое нарушение: мут на 24ч. Второе: Перманентный бан.</p>
+<h3 class="font-body-bold text-body-bold text-on-surface mb-xs">Уважение</h3>
+<p class="font-body-base text-body-base text-on-surface-variant">Все игроки обязаны проявлять уважение друг к другу и администрации.</p>
 </div>
 </div>
-<div class="grid md:grid-cols-3 gap-md">
-<div class="p-md rounded-lg border border-outline-variant">
-<h4 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Спам и Капс</h4>
-<p class="text-xs text-on-surface-variant">Не забивайте чат повторяющимися сообщениями или чрезмерным использованием заглавных букв. Соблюдайте чистоту общения.</p>
-</div>
-<div class="p-md rounded-lg border border-outline-variant">
-<h4 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Реклама</h4>
-<p class="text-xs text-on-surface-variant">Упоминание или продвижение других серверов Minecraft или внешних ссылок на Discord строго запрещено.</p>
-</div>
-<div class="p-md rounded-lg border border-outline-variant">
-<h4 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Личные данные</h4>
-<p class="text-xs text-on-surface-variant">Деанонимизация (доксинг) или распространение личной информации других игроков ведет к немедленному черному списку.</p>
+<div class="flex gap-md group">
+<div class="rule-number h-10 w-10 shrink-0 flex items-center justify-center rounded-lg font-stat-mono text-lg">1.2</div>
+<div>
+<h3 class="font-body-bold text-body-bold text-on-surface mb-xs">Аккаунты</h3>
+<p class="font-body-base text-body-base text-on-surface-variant">Запрещена продажа, передача или покупка игровых аккаунтов третьим лицам.</p>
 </div>
 </div>
+<div class="flex gap-md group">
+<div class="rule-number h-10 w-10 shrink-0 flex items-center justify-center rounded-lg font-stat-mono text-lg">1.3</div>
+<div>
+<h3 class="font-body-bold text-body-bold text-on-surface mb-xs">Никнеймы</h3>
+<p class="font-body-base text-body-base text-on-surface-variant">Ник не должен содержать мат, оскорбления или рекламу сторонних ресурсов.</p>
+</div>
+</div>
+<div class="flex gap-md group">
+<div class="rule-number h-10 w-10 shrink-0 flex items-center justify-center rounded-lg font-stat-mono text-lg">1.4</div>
+<div>
+<h3 class="font-body-bold text-body-bold text-on-surface mb-xs">Администрация</h3>
+<p class="font-body-base text-body-base text-on-surface-variant">Запрещено вводить администрацию в заблуждение или препятствовать их работе.</p>
 </div>
 </div>
 </div>
-<!-- Category 3: Gameplay -->
-<div class="accordion-item ghost-border rounded-xl bg-surface-container transition-all overflow-hidden" id="category-gameplay">
-<button class="w-full flex items-center justify-between p-lg text-left focus:outline-none" onclick="toggleAccordion('category-gameplay')">
+</div>
+<!-- Chat Behavior -->
+<div class="rule-card ghost-border rounded-xl overflow-hidden">
+<div class="p-lg bg-surface-container flex items-center gap-md border-b border-outline">
+<span class="material-symbols-outlined text-secondary" data-icon="forum">forum</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">КУЛЬТУРА ОБЩЕНИЯ</h2>
+</div>
+<div class="p-lg space-y-md">
+<div class="flex items-start gap-md p-md bg-surface-container-low rounded-lg transition-transform hover:translate-x-1 duration-300">
+<div class="rule-number h-8 w-12 flex items-center justify-center rounded font-stat-mono text-sm">2.1</div>
+<div class="font-body-base text-body-base">
+<span class="text-on-surface font-semibold">Флуд и Спам:</span> Запрещено многократное повторение сообщений или символов, засоряющих чат.
+                        </div>
+</div>
+<div class="flex items-start gap-md p-md bg-surface-container-low rounded-lg transition-transform hover:translate-x-1 duration-300">
+<div class="rule-number h-8 w-12 flex items-center justify-center rounded font-stat-mono text-sm">2.2</div>
+<div class="font-body-base text-body-base">
+<span class="text-on-surface font-semibold">Оскорбления:</span> Запрещено использование ненормативной лексики в адрес игроков или их близких.
+                        </div>
+</div>
+<div class="flex items-start gap-md p-md bg-surface-container-low rounded-lg transition-transform hover:translate-x-1 duration-300">
+<div class="rule-number h-8 w-12 flex items-center justify-center rounded font-stat-mono text-sm">2.3</div>
+<div class="font-body-base text-body-base">
+<span class="text-on-surface font-semibold">Реклама:</span> Упоминание сторонних серверов, ресурсов или услуг карается перманентным баном.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Gameplay Rules -->
+<div class="rule-card ghost-border rounded-xl overflow-hidden">
+<div class="p-lg bg-surface-container flex items-center gap-md border-b border-outline">
+<span class="material-symbols-outlined text-tertiary" data-icon="swords">swords</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">ИГРОВОЙ ПРОЦЕСС</h2>
+</div>
+<div class="p-lg grid grid-cols-1 gap-md">
+<!-- Rule with highlight -->
+<div class="border-l-4 border-error-redstone bg-error-container/10 p-md rounded-r-lg">
+<div class="flex items-center gap-sm mb-xs">
+<span class="rule-number px-2 py-0.5 rounded text-xs">3.1 - КРИТИЧЕСКОЕ</span>
+</div>
+<h3 class="font-body-bold text-body-bold text-on-surface">Использование читов и стороннего ПО</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Любые модификации, дающие преимущество над другими игроками (X-Ray, KillAura, Fly и т.д.), строго запрещены.</p>
+</div>
+<div class="p-md bg-surface-container-low rounded-lg border border-outline/50">
 <div class="flex items-center gap-md">
-<span class="material-symbols-outlined text-tertiary text-3xl">swords</span>
-<h2 class="font-headline-md text-headline-md">Игровой процесс</h2>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform chevron-icon">expand_more</span>
-</button>
-<div class="accordion-content px-lg pb-lg">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-lg pt-md border-t border-outline-variant">
-<div class="bg-surface-container-high p-lg rounded-xl border border-outline-variant">
-<div class="flex items-center gap-sm mb-md">
-<span class="material-symbols-outlined text-primary">verified_user</span>
-<h3 class="font-body-bold">Этика честной игры</h3>
-</div>
-<ul class="space-y-sm text-sm text-on-surface-variant">
-<li class="flex gap-sm"><span class="text-primary">•</span> Никакого гриферства в охраняемых зонах или технических секторах.</li>
-<li class="flex gap-sm"><span class="text-primary">•</span> Запрещен "Combat Log" (выход из игры во время PvP боя).</li>
-<li class="flex gap-sm"><span class="text-primary">•</span> Соблюдение лимитов на редстоун-схемы для обеспечения стабильности сервера.</li>
-</ul>
-</div>
-<div class="bg-surface-container-high p-lg rounded-xl border border-outline-variant">
-<div class="flex items-center gap-sm mb-md">
-<span class="material-symbols-outlined text-error-redstone">dangerous</span>
-<h3 class="font-body-bold">Запрещенные действия</h3>
-</div>
-<ul class="space-y-sm text-sm text-on-surface-variant">
-<li class="flex gap-sm"><span class="text-error-redstone">•</span> Использование флай-хаков, X-Ray или киллауры.</li>
-<li class="flex gap-sm"><span class="text-error-redstone">•</span> Намеренное создание лаг-машин.</li>
-<li class="flex gap-sm"><span class="text-error-redstone">•</span> Мошенничество, связанное с торговлей за реальную валюту.</li>
-</ul>
+<div class="rule-number h-8 w-8 shrink-0 flex items-center justify-center rounded font-stat-mono text-sm">3.2</div>
+<div>
+<p class="font-body-base text-body-base text-on-surface-variant">
+<span class="text-on-surface font-bold uppercase tracking-wider text-xs">Гриферство:</span> Разрушение чужих построек или воровство ресурсов в приватных зонах запрещено.
+                                </p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<!-- IP Widget -->
-<section class="mt-section-gap-desktop p-xl rounded-2xl bg-surface-container-high border border-primary/30 flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="p-md bg-surface-container-low rounded-lg border border-outline/50">
 <div class="flex items-center gap-md">
+<div class="rule-number h-8 w-8 shrink-0 flex items-center justify-center rounded font-stat-mono text-sm">3.3</div>
+<div>
+<p class="font-body-base text-body-base text-on-surface-variant">
+<span class="text-on-surface font-bold uppercase tracking-wider text-xs">Багоюз:</span> Сокрытие или использование внутриигровых ошибок для личной выгоды запрещено.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- IP Widget Section -->
+<section class="mt-section-gap-desktop">
+<div class="bg-surface-container rounded-xl p-xl flex flex-col md:flex-row items-center justify-between border border-outline group hover:border-primary transition-all duration-500">
+<div class="flex items-center gap-lg mb-lg md:mb-0">
 <div class="relative">
-<div class="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
-<div class="absolute inset-0 w-4 h-4 bg-primary rounded-full blur-md opacity-50"></div>
+<div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="hub">hub</span>
+</div>
+<!-- Pulse effect -->
+<span class="absolute -top-1 -right-1 flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-primary"></span>
+</span>
 </div>
 <div>
-<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-xs">IP СЕРВЕРА</h4>
-<span class="font-ip-address text-ip-address text-primary">minox.mineserver.xyz</span>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-1">Начни играть на Minox</h4>
+<div class="flex items-center gap-sm">
+<span class="font-stat-mono text-stat-mono text-on-surface" id="server-ip">minox.mineserver.xyz</span>
 </div>
 </div>
-<button class="flex items-center gap-sm bg-surface-container-highest px-xl py-md rounded-lg font-body-bold text-on-surface border border-outline hover:border-primary transition-all active:scale-95 group" id="copy-ip">
-<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">content_copy</span>
-                КОПИРОВАТЬ IP
-            </button>
+</div>
+<button class="flex items-center gap-sm bg-secondary text-on-secondary px-xl py-md rounded-lg font-headline-md hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-secondary/10" onclick="copyIP()">
+<span id="copy-text">КОПИРОВАТЬ IP</span>
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full mt-section-gap-desktop border-t border-outline">
-<div class="max-w-[1012px] mx-auto flex flex-col md:flex-row justify-between items-center py-xl px-lg gap-lg">
-<div class="flex flex-col items-center md:items-start">
-<span class="font-headline-md text-headline-md text-on-surface mb-xs">MINOX NETWORK</span>
-<p class="font-body-base text-xs text-on-surface-variant opacity-60">© 2024 MINOX NETWORK. НЕ ЯВЛЯЕТСЯ ОФИЦИАЛЬНЫМ ПРОДУКТОМ MINECRAFT.</p>
+<footer class="w-full mt-section-gap-desktop border-t border-outline bg-surface-container-lowest">
+<div class="max-w-[1012px] mx-auto flex flex-col md:flex-row justify-between items-center py-xl px-lg">
+<div class="mb-md md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface">MINOX NETWORK</span>
+<p class="font-body-base text-xs text-on-surface-variant mt-2 opacity-80">© 2024 MINOX NETWORK. NOT AN OFFICIAL MINECRAFT PRODUCT.</p>
 </div>
 <div class="flex gap-xl">
-<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Условия использования</a>
-<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Конфиденциальность</a>
-<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Discord</a>
-<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Поддержка</a>
+<a class="font-body-base text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-base text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-base text-on-surface-variant hover:text-primary transition-colors" href="#">Discord</a>
+<a class="font-body-base text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
 </div>
 </div>
 </footer>
 <script>
-        function toggleAccordion(id) {
-            const item = document.getElementById(id);
-            const isActive = item.classList.contains('active');
-            
-            if (isActive) {
-                item.classList.remove('active');
-            } else {
-                item.classList.add('active');
-            }
-        }
-
-        // IP Copy Interaction
-        document.getElementById('copy-ip').addEventListener('click', function() {
-            const ip = 'minox.mineserver.xyz';
+        function copyIP() {
+            const ip = document.getElementById('server-ip').innerText;
             navigator.clipboard.writeText(ip).then(() => {
-                const originalText = this.innerHTML;
-                this.innerHTML = `<span class="material-symbols-outlined text-primary">done</span> СКОПИРОВАНО!`;
+                const btnText = document.getElementById('copy-text');
+                const originalText = btnText.innerText;
+                btnText.innerText = 'СКОПИРОВАНО!';
+                
                 setTimeout(() => {
-                    this.innerHTML = originalText;
+                    btnText.innerText = originalText;
                 }, 2000);
             });
+        }
+
+        // Simple interactive scroll effect for rule cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.rule-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(card);
         });
     </script>
 </body></html>

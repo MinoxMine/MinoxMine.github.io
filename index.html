@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="ru"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MINOX NETWORK | Главная</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
+<!DOCTYPE html><html class="dark" lang="ru"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -103,76 +93,24 @@
           },
         },
       }
-    </script>
-<style>
-        body {
-            background-color: #111416;
-            color: #e1e2e5;
-            -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
-        }
-
-        .ghost-border {
-            border: 1px solid #334155;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-4px);
-            border-color: #4edea3;
-            box-shadow: 0 10px 30px -10px rgba(78, 222, 163, 0.2);
-        }
-
-        .pulse-emerald {
-            box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.7);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(78, 222, 163, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(78, 222, 163, 0); }
-        }
-
-        .gradient-mask {
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
-
-        .section-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .section-content.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .nav-link.active {
-            color: #4edea3 !important;
-            border-bottom: 2px solid #4edea3;
-            padding-bottom: 4px;
-        }
-    </style>
-</head>
-<body class="font-body-base text-body-base bg-background min-h-screen flex flex-col">
+    }catch(_e){}</script></head><body class="font-body-base text-body-base bg-background min-h-screen flex flex-col">
 <!-- TopAppBar -->
 <header class="bg-surface-dim/80 backdrop-blur-md w-full sticky top-0 z-50 border-b border-outline">
-<div class="max-w-[1012px] mx-auto flex justify-between items-center px-lg py-md">
-<a class="flex items-center gap-sm cursor-pointer" onclick="showSection('home')">
-<span class="material-symbols-outlined text-primary text-headline-md" data-icon="shield_with_heart">shield_with_heart</span>
-<span class="font-display-lg text-display-lg text-primary tracking-tighter uppercase text-[24px] leading-tight">MINOX</span>
-</a>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex gap-xl items-center" id="main-nav">
-<a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active" data-section="home" onclick="showSection('home')">Главная</a>
-<a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-section="rules" onclick="showSection('rules')">Правила</a>
-<a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-section="faq" onclick="showSection('faq')">FAQ</a>
-</nav>
-<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-bold hover:bg-primary-container transition-all active:scale-95 text-label-caps" onclick="scrollToIP()">
+    <div class="max-w-[1012px] mx-auto flex justify-between items-center px-lg py-md">
+        <a class="flex items-center gap-sm cursor-pointer" onclick="showSection('home')">
+            <span class="material-symbols-outlined text-primary text-headline-md" data-icon="shield_with_heart" data-original-icon="shield_with_heart">shield_with_heart</span>
+            <span class="font-display-lg text-display-lg text-primary tracking-tighter uppercase text-[24px] leading-tight">MINOX</span>
+        </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-xl items-center" id="main-nav">
+            <a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active" data-section="home" onclick="showSection('home')">Главная</a>
+            <a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-section="rules" onclick="showSection('rules')">Правила</a>
+            <a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-section="faq" onclick="showSection('faq')">FAQ</a>
+        </nav>
+        <button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-bold hover:bg-primary-container transition-all active:scale-95 text-label-caps" onclick="scrollToIP()">
             ИГРАТЬ СЕЙЧАС
         </button>
-</div>
+    </div>
 </header>
 <main class="flex-grow">
 <!-- Section: Home -->
@@ -213,7 +151,7 @@
 </div>
 <button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-body-bold flex items-center gap-sm active:scale-95 transition-transform" onclick="copyIPMobile()">
 <span class="material-symbols-outlined text-[20px]">content_copy</span>
-<span id="copy-text-mobile">КОПИРОВАТЬ</span>
+<span id="copy-text-mobile" class="">КОПИРОВАТЬ</span>
 </button>
 </div>
 </div>
@@ -271,6 +209,7 @@
 </div>
 </section>
 </div>
+
 <!-- Section: Rules -->
 <div class="section-content" id="section-rules">
 <section class="max-w-[1012px] mx-auto px-lg py-section-gap-desktop">
@@ -295,6 +234,7 @@
 </div>
 </section>
 </div>
+
 <!-- Section: FAQ -->
 <div class="section-content" id="section-faq">
 <section class="max-w-[1012px] mx-auto px-lg py-section-gap-desktop">
@@ -328,7 +268,8 @@
 </section>
 </div>
 <!-- Referral Program (Global) -->
-<section class="bg-surface-container border-y border-outline mt-section-gap-desktop">
+
+</main><section class="bg-surface-container border-y border-outline">
 <div class="max-w-[1012px] mx-auto px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-lg text-center md:text-left">
 <div>
 <h3 class="font-headline-md text-white mb-xs uppercase">Приглашай друзей</h3>
@@ -339,7 +280,6 @@
                 </button>
 </div>
 </section>
-</main>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest w-full border-t border-outline">
 <div class="max-w-[1012px] mx-auto flex flex-col md:flex-row justify-between items-center py-xl px-lg gap-lg md:gap-0">
@@ -370,7 +310,7 @@
 </div>
 </div>
 </footer>
-<script>
+<script class="">
         function showSection(sectionId) {
             // Hide all sections
             const sections = document.querySelectorAll('.section-content');
@@ -424,480 +364,4 @@
                 btnText.parentElement.classList.add('bg-on-primary-container');
                 setTimeout(() => {
                     btnText.innerText = originalText;
-                    btnText.parentElement.classList.remove('bg-on-primary-container');
-                }, 2000);
-            });
-        }
-
-        function scrollToIP() {
-            // If we're not on home, go home first
-            if (!document.getElementById('section-home').classList.contains('active')) {
-                showSection('home');
-                setTimeout(() => {
-                    document.getElementById('ip-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            } else {
-                document.getElementById('ip-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-
-        // Handle initial load with hash
-        window.onload = () => {
-            const hash = window.location.hash.replace('#', '');
-            if (hash && document.getElementById('section-' + hash)) {
-                showSection(hash);
-            }
-        };
-    </script>
-</body></html><!DOCTYPE html>
-
-<html class="dark" lang="ru"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MINOX NETWORK | Главная</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-variant": "#323537",
-                    "surface-container-highest": "#323537",
-                    "secondary": "#ffb95f",
-                    "on-surface-variant": "#94a3b8",
-                    "error": "#ffb4ab",
-                    "on-tertiary": "#003640",
-                    "tertiary-container": "#00b2d0",
-                    "on-error-container": "#ffdad6",
-                    "inverse-surface": "#e1e2e5",
-                    "background": "#111416",
-                    "on-background": "#e1e2e5",
-                    "surface-tint": "#4edea3",
-                    "on-primary-container": "#00422b",
-                    "primary-fixed": "#6ffbbe",
-                    "primary-fixed-dim": "#4edea3",
-                    "tertiary": "#4cd7f6",
-                    "error-redstone": "#ef4444",
-                    "surface-container-lowest": "#0c0f11",
-                    "outline": "#334155",
-                    "surface-container": "#1d2022",
-                    "on-surface": "#e1e2e5",
-                    "secondary-fixed": "#ffddb8",
-                    "error-container": "#93000a",
-                    "on-secondary-fixed-variant": "#653e00",
-                    "on-error": "#690005",
-                    "inverse-on-surface": "#2e3133",
-                    "on-tertiary-container": "#003f4b",
-                    "secondary-container": "#ee9800",
-                    "primary-container": "#10b981",
-                    "on-secondary": "#472a00",
-                    "on-primary-fixed": "#002113",
-                    "surface-bright": "#37393c",
-                    "on-tertiary-fixed-variant": "#004e5c",
-                    "tertiary-fixed": "#acedff",
-                    "surface": "#161a1d",
-                    "on-secondary-container": "#5b3800",
-                    "on-primary-fixed-variant": "#005236",
-                    "inverse-primary": "#006c49",
-                    "secondary-fixed-dim": "#ffb95f",
-                    "on-tertiary-fixed": "#001f26",
-                    "surface-container-low": "#191c1e",
-                    "tertiary-fixed-dim": "#4cd7f6",
-                    "surface-container-high": "#272a2c",
-                    "outline-variant": "#3c4a42",
-                    "surface-dim": "#111416",
-                    "on-primary": "#003824",
-                    "primary": "#4edea3",
-                    "on-secondary-fixed": "#2a1700"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "sm": "8px",
-                    "xs": "4px",
-                    "base": "4px",
-                    "section-gap-mobile": "40px",
-                    "section-gap-desktop": "64px",
-                    "md": "16px",
-                    "xl": "32px",
-                    "lg": "24px",
-                    "container-max": "1012px"
-            },
-            "fontFamily": {
-                    "ip-address": ["JetBrains Mono"],
-                    "headline-md": ["Montserrat"],
-                    "display-lg-mobile": ["Montserrat"],
-                    "label-caps": ["Montserrat"],
-                    "display-lg": ["Montserrat"],
-                    "body-bold": ["Inter"],
-                    "stat-mono": ["JetBrains Mono"],
-                    "body-base": ["Inter"]
-            },
-            "fontSize": {
-                    "ip-address": ["18px", {"lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
-                    "stat-mono": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        body {
-            background-color: #111416;
-            color: #e1e2e5;
-            -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
-        }
-
-        .ghost-border {
-            border: 1px solid #334155;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-4px);
-            border-color: #4edea3;
-            box-shadow: 0 10px 30px -10px rgba(78, 222, 163, 0.2);
-        }
-
-        .pulse-emerald {
-            box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.7);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(78, 222, 163, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(78, 222, 163, 0); }
-        }
-
-        .gradient-mask {
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
-
-        .section-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .section-content.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .nav-link.active {
-            color: #4edea3 !important;
-            border-bottom: 2px solid #4edea3;
-            padding-bottom: 4px;
-        }
-    </style>
-</head>
-<body class="font-body-base text-body-base bg-background min-h-screen flex flex-col">
-<!-- TopAppBar -->
-<header class="bg-surface-dim/80 backdrop-blur-md w-full sticky top-0 z-50 border-b border-outline">
-<div class="max-w-[1012px] mx-auto flex justify-between items-center px-lg py-md">
-<a class="flex items-center gap-sm cursor-pointer" onclick="showSection('home')">
-<span class="material-symbols-outlined text-primary text-headline-md" data-icon="shield_with_heart">shield_with_heart</span>
-<span class="font-display-lg text-display-lg text-primary tracking-tighter uppercase text-[24px] leading-tight">MINOX</span>
-</a>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex gap-xl items-center" id="main-nav">
-<a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active" data-section="home" onclick="showSection('home')">Главная</a>
-<a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-section="rules" onclick="showSection('rules')">Правила</a>
-<a class="nav-link font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-section="faq" onclick="showSection('faq')">FAQ</a>
-</nav>
-<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-bold hover:bg-primary-container transition-all active:scale-95 text-label-caps" onclick="scrollToIP()">
-            ИГРАТЬ СЕЙЧАС
-        </button>
-</div>
-</header>
-<main class="flex-grow">
-<!-- Section: Home -->
-<div class="section-content active" id="section-home">
-<!-- Hero Section -->
-<section class="relative h-auto md:h-[600px] overflow-hidden flex items-center justify-center py-section-gap-mobile md:py-0">
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-<div class="relative z-10 max-w-[1012px] mx-auto px-lg text-center">
-<div class="block md:hidden mb-lg">
-<div class="inline-flex items-center gap-sm px-md py-xs bg-primary/10 border border-primary/20 rounded-full">
-<span class="relative flex h-3 w-3">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-</span>
-<span class="font-label-caps text-label-caps text-primary uppercase">1,492 Игроков Онлайн</span>
-</div>
-</div>
-<h1 class="hidden md:block font-display-lg text-display-lg text-white mb-md leading-tight uppercase">ВАШ НОВЫЙ ДОМ В <span class="text-primary">MINECRAFT</span></h1>
-<h1 class="md:hidden font-display-lg text-display-lg-mobile text-white mb-md leading-tight uppercase tracking-tighter">MINOX <span class="text-primary">NETWORK</span></h1>
-<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mx-auto mb-xl">
-                        Ультра-стабильная сеть серверов с уникальной экономикой, активным комьюнити и ивентами, которые заставят вас вернуться. Присоединяйтесь к Minox Network сегодня.
-                    </p>
-<!-- IP Widget -->
-<div class="flex flex-col md:flex-row items-center justify-center gap-md" id="ip-section">
-<div class="hidden md:flex bg-surface-container ghost-border p-md rounded-xl items-center gap-lg min-w-[320px] group transition-all hover:border-primary">
-<div class="flex flex-col items-start">
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Server Address</span>
-<span class="font-ip-address text-ip-address text-primary" id="server-ip">minox.mineserver.xyz</span>
-</div>
-<button class="ml-auto bg-surface-variant p-sm rounded-lg text-on-surface hover:text-primary active:scale-90 transition-all" onclick="copyIP()">
-<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
-</button>
-</div>
-<div class="md:hidden w-full max-w-md mx-auto">
-<div class="bg-surface-container border border-outline p-sm rounded-xl flex items-center gap-md group hover:border-primary transition-all duration-300">
-<div class="flex-1 px-md py-sm">
-<span class="font-ip-address text-ip-address text-on-surface" id="server-ip-mobile">minox.mineserver.xyz</span>
-</div>
-<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-body-bold flex items-center gap-sm active:scale-95 transition-transform" onclick="copyIPMobile()">
-<span class="material-symbols-outlined text-[20px]">content_copy</span>
-<span id="copy-text-mobile">КОПИРОВАТЬ</span>
-</button>
-</div>
-</div>
-<div class="hidden md:flex bg-surface-container ghost-border p-md rounded-xl items-center gap-md">
-<div class="w-3 h-3 bg-primary rounded-full pulse-emerald"></div>
-<div class="flex flex-col items-start">
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Online Players</span>
-<span class="font-stat-mono text-stat-mono text-white">1,248</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Features Summary -->
-<section class="max-w-[1012px] mx-auto px-lg py-section-gap-desktop">
-<div class="flex flex-col items-start mb-xl">
-<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-sm">Почему мы?</span>
-<h2 class="font-headline-md text-headline-md text-white uppercase">Преимущества сети</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
-<div class="md:col-span-8 bg-surface-container border border-outline rounded-xl p-xl flex flex-col justify-end min-h-[300px] md:min-h-[340px] relative overflow-hidden group card-hover">
-<div class="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-110 opacity-30 md:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc4bhYK59p9h94hXxkkNU3BCCfRGk9FQePQZo3CG5Bej3OH95Tt3ynQpmYHmOhl9UPRyVNe6Z9nm_WxXmQxQ5RNcfFGrD_e7oHxpMsYHqwXzM6XbUlYpxc8FQIrTKM5NSq5tuBcCT3G77nsPBSW-HnstLA3h46AtSKl55avfrUqCJvo1numDeypsEt45gpPj2QYD-T_w5S-QE61vZFsNmKsOihKrhyNzQO6iS-37b-fgCu_1ukA7Km')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent z-10"></div>
-<div class="relative z-20">
-<span class="material-symbols-outlined text-primary text-[48px] mb-md" data-icon="rocket_launch">rocket_launch</span>
-<h3 class="font-headline-md text-headline-md text-white mb-sm">Максимальная Стабильность</h3>
-<p class="text-on-surface-variant font-body-base">Собственное оборудование и защита от DDoS уровня Enterprise. Пинг 20мс — это реальность.</p>
-</div>
-</div>
-<div class="md:col-span-4 bg-primary-container text-on-primary-container rounded-xl p-xl flex flex-col justify-between group emerald-glow transition-all">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-[40px]" data-icon="groups">groups</span>
-<span class="font-label-caps text-label-caps bg-on-primary-container/10 px-sm py-xs rounded">В РЕАЛЬНОМ ВРЕМЕНИ</span>
-</div>
-<div>
-<div class="font-stat-mono text-stat-mono mb-xs">24/7</div>
-<p class="font-body-bold">Сервер всегда доступен для ваших приключений</p>
-</div>
-</div>
-<div class="md:col-span-4 bg-surface-container border border-outline rounded-xl p-xl hover:-translate-y-1 transition-all duration-300 group">
-<span class="material-symbols-outlined text-secondary text-[40px] mb-md" data-icon="payments">payments</span>
-<h3 class="font-headline-md text-headline-md text-white mb-sm">Экономика</h3>
-<p class="text-on-surface-variant font-body-base">Продуманный рынок, аукционы и банковская система для настоящих магнатов.</p>
-</div>
-<div class="md:col-span-4 bg-surface-container border border-outline rounded-xl p-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-tertiary text-[40px] mb-md" data-icon="celebration">celebration</span>
-<h3 class="font-headline-md text-headline-md text-white mb-sm">Ивенты</h3>
-<p class="text-on-surface-variant font-body-base">Каждую субботу — масштабные битвы и конкурсы с ценными призами.</p>
-</div>
-<div class="md:col-span-4 bg-surface-container border border-outline rounded-xl p-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-error-redstone text-[40px] mb-md" data-icon="forum">forum</span>
-<h3 class="font-headline-md text-headline-md text-white mb-sm">Комьюнити</h3>
-<p class="text-on-surface-variant font-body-base">Ламповый дискорд и адекватная администрация. Мы ценим каждого игрока.</p>
-</div>
-</div>
-</section>
-</div>
-<!-- Section: Rules -->
-<div class="section-content" id="section-rules">
-<section class="max-w-[1012px] mx-auto px-lg py-section-gap-desktop">
-<div class="flex flex-col items-center text-center mb-xl">
-<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-sm">Регламент</span>
-<h2 class="font-headline-md text-headline-md text-white uppercase mb-md">Правила Сервера</h2>
-<p class="text-on-surface-variant max-w-2xl">Свод правил, обязательный для исполнения всеми игроками Minox Network.</p>
-</div>
-<div class="space-y-md">
-<div class="bg-surface-container border border-outline rounded-xl p-lg">
-<h3 class="font-bold text-white mb-sm flex items-center gap-sm"><span class="text-primary">1.</span> Общее поведение</h3>
-<p class="text-on-surface-variant">Запрещены любые проявления агрессии, оскорбления игроков и администрации, а также разжигание конфликтов.</p>
-</div>
-<div class="bg-surface-container border border-outline rounded-xl p-lg">
-<h3 class="font-bold text-white mb-sm flex items-center gap-sm"><span class="text-primary">2.</span> Игровой процесс</h3>
-<p class="text-on-surface-variant">Использование читов, стороннего ПО и багов игры строго запрещено и карается перманентной блокировкой.</p>
-</div>
-<div class="bg-surface-container border border-outline rounded-xl p-lg">
-<h3 class="font-bold text-white mb-sm flex items-center gap-sm"><span class="text-primary">3.</span> Реклама и Спам</h3>
-<p class="text-on-surface-variant">Реклама сторонних проектов, серверов и спам в чате запрещены в любом виде.</p>
-</div>
-</div>
-</section>
-</div>
-<!-- Section: FAQ -->
-<div class="section-content" id="section-faq">
-<section class="max-w-[1012px] mx-auto px-lg py-section-gap-desktop">
-<div class="text-center mb-xl">
-<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-sm">Помощь</span>
-<h2 class="font-display-lg text-display-lg text-white uppercase">Частые Вопросы</h2>
-</div>
-<div class="max-w-2xl mx-auto space-y-md">
-<details class="bg-surface-container border border-outline rounded-xl p-lg cursor-pointer group">
-<summary class="font-bold text-white list-none flex justify-between items-center">
-                            Как начать играть?
-                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<p class="mt-md text-on-surface-variant">Для игры вам понадобится Minecraft версии 1.16.5 - 1.20. Скопируйте IP адрес с главной страницы и добавьте сервер в список сетевой игры.</p>
-</details>
-<details class="bg-surface-container border border-outline rounded-xl p-lg cursor-pointer group">
-<summary class="font-bold text-white list-none flex justify-between items-center">
-                            Что делать, если я купил донат и он не пришел?
-                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<p class="mt-md text-on-surface-variant">Обычно зачисление занимает от 5 до 15 минут. Если прошло больше времени, обратитесь в нашу техподдержку в Discord или через форму на сайте.</p>
-</details>
-<details class="bg-surface-container border border-outline rounded-xl p-lg cursor-pointer group">
-<summary class="font-bold text-white list-none flex justify-between items-center">
-                            Есть ли у вас сервер в Discord?
-                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<p class="mt-md text-on-surface-variant">Да, ссылка на Discord доступна в футере сайта. Там вы найдете новости, ивенты и сможете пообщаться с другими игроками.</p>
-</details>
-</div>
-</section>
-</div>
-<!-- Referral Program (Global) -->
-<section class="bg-surface-container border-y border-outline mt-section-gap-desktop">
-<div class="max-w-[1012px] mx-auto px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-lg text-center md:text-left">
-<div>
-<h3 class="font-headline-md text-white mb-xs uppercase">Приглашай друзей</h3>
-<p class="text-on-surface-variant">Получай бонусы за каждого приведенного игрока через реферальную систему.</p>
-</div>
-<button class="bg-primary/10 text-primary border border-primary/30 px-lg py-md rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-all whitespace-nowrap">
-                    ПОЛУЧИТЬ ССЫЛКУ
-                </button>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest w-full border-t border-outline">
-<div class="max-w-[1012px] mx-auto flex flex-col md:flex-row justify-between items-center py-xl px-lg gap-lg md:gap-0">
-<div class="flex flex-col items-center md:items-start text-center md:text-left">
-<span class="font-headline-md text-headline-md text-on-surface mb-sm uppercase">MINOX NETWORK</span>
-<p class="text-on-surface-variant text-[14px] font-body-base max-w-xs">
-                    © 2024 MINOX NETWORK. НЕ ЯВЛЯЕТСЯ ОФИЦИАЛЬНЫМ ПРОДУКТОМ MINECRAFT. НЕ ОДОБРЕНО И НЕ СВЯЗАНО С MOJANG ИЛИ MICROSOFT.
-                </p>
-</div>
-<div class="flex flex-col items-center md:items-end gap-md">
-<div class="flex flex-wrap justify-center gap-lg">
-<div class="flex flex-col gap-sm items-center md:items-start">
-<span class="font-label-caps text-label-caps text-primary uppercase">Информация</span>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base cursor-pointer" onclick="showSection('rules')">Условия использования</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base cursor-pointer" onclick="showSection('faq')">Помощь</a>
-</div>
-<div class="flex flex-col gap-sm items-center md:items-start">
-<span class="font-label-caps text-label-caps text-primary uppercase">Связь</span>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base" href="#">Discord</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base" href="#">Поддержка</a>
-</div>
-</div>
-<div class="flex gap-sm">
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-all" data-icon="language">language</span>
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-all" data-icon="forum">forum</span>
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-all" data-icon="video_library">video_library</span>
-</div>
-</div>
-</div>
-</footer>
-<script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section-content');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Show target section
-            const target = document.getElementById('section-' + sectionId);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // Update nav links by checking data-section attribute
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-section') === sectionId) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Sync URL hash for UX
-            history.pushState(null, null, '#' + sectionId);
-        }
-
-        function copyIP() {
-            const ip = document.getElementById('server-ip').innerText;
-            navigator.clipboard.writeText(ip).then(() => {
-                const btn = event.currentTarget;
-                const icon = btn.querySelector('.material-symbols-outlined');
-                const originalIcon = icon.innerText;
-                
-                icon.innerText = 'check';
-                icon.classList.add('text-primary');
-                
-                setTimeout(() => {
-                    icon.innerText = originalIcon;
-                    icon.classList.remove('text-primary');
-                }, 2000);
-            });
-        }
-
-        function copyIPMobile() {
-            const ip = document.getElementById('server-ip-mobile').innerText;
-            navigator.clipboard.writeText(ip).then(() => {
-                const btnText = document.getElementById('copy-text-mobile');
-                const originalText = btnText.innerText;
-                btnText.innerText = 'СКОПИРОВАНО!';
-                btnText.parentElement.classList.add('bg-on-primary-container');
-                setTimeout(() => {
-                    btnText.innerText = originalText;
-                    btnText.parentElement.classList.remove('bg-on-primary-container');
-                }, 2000);
-            });
-        }
-
-        function scrollToIP() {
-            // If we're not on home, go home first
-            if (!document.getElementById('section-home').classList.contains('active')) {
-                showSection('home');
-                setTimeout(() => {
-                    document.getElementById('ip-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            } else {
-                document.getElementById('ip-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-
-        // Handle initial load with hash
-        window.onload = () => {
-            const hash = window.location.hash.replace('#', '');
-            if (hash && document.getElementById('section-' + hash)) {
-                showSection(hash);
-            }
-        };
-    </script>
-</body></html>
+                    btnText</script></body></html>

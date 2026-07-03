@@ -39,3 +39,4 @@ body {
 /* Utility classes for animations */
 .transition-all { transition: all 0.3s ease; }
 .hover-scale:hover { transform: scale(1.02); }
+.active-scale:active { transform: scale(0.98); }

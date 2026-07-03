@@ -16,22 +16,24 @@
   </style>
 </head>
 <body>
-<!-- STITCH_THREEJS_START:ANIMATION_22 class="fixed inset-0 w-full h-full bg-transparent" -->
+<!-- STITCH_THREEJS_START:ANIMATION_24 class="fixed inset-0 w-full h-full bg-transparent" -->
 <div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
 <script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
-<div id="threejs-container-ANIMATION_22" style="width:100%;height:100%"></div>
+<div id="threejs-container-ANIMATION_24" style="width:100%;height:100%"></div>
 <script>
 (function() {
-  const container = document.getElementById('threejs-container-ANIMATION_22');
+  const container = document.getElementById('threejs-container-ANIMATION_24');
   const devicePixelRatio = window.devicePixelRatio || 1;
-  document.addEventListener('DOMContentLoaded', () => {
+  // Minox Network - Interactive Scripts
+
+document.addEventListener('DOMContentLoaded', () => {
     console.log('Minox Network Site Initialized');
 
     // Smooth Scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#')) {
+            if (targetId.startsWith('#') && targetId.length > 1) {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -81,9 +83,10 @@
         });
     }
 });
+
 })();
 </script>
 </div>
-<!-- STITCH_THREEJS_END:ANIMATION_22 -->
+<!-- STITCH_THREEJS_END:ANIMATION_24 -->
 </body>
 </html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINOX NETWORK | Игровые Режимы</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001f26",
+                    "on-secondary-container": "#5b3800",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#10b981",
+                    "surface": "#161a1d",
+                    "on-background": "#e1e2e5",
+                    "surface-tint": "#4edea3",
+                    "on-primary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "on-primary": "#003824",
+                    "surface-variant": "#323537",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "surface-container": "#1d2022",
+                    "on-tertiary-container": "#003f4b",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#272a2c",
+                    "primary": "#4edea3",
+                    "error-redstone": "#ef4444",
+                    "surface-dim": "#111416",
+                    "background": "#111416",
+                    "on-surface-variant": "#bbcabf",
+                    "surface-container-low": "#191c1e",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "surface-container-highest": "#323537",
+                    "on-primary-fixed-variant": "#005236",
+                    "surface-container-lowest": "#0c0f11",
+                    "primary-fixed": "#6ffbbe",
+                    "on-tertiary": "#003640",
+                    "primary-fixed-dim": "#4edea3",
+                    "secondary": "#ffb95f",
+                    "inverse-on-surface": "#2e3133",
+                    "secondary-fixed": "#ffddb8",
+                    "on-secondary-fixed": "#2a1700",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "on-secondary": "#472a00",
+                    "tertiary": "#4cd7f6",
+                    "on-error": "#690005",
+                    "on-primary-container": "#00422b",
+                    "inverse-primary": "#006c49",
+                    "secondary-container": "#ee9800",
+                    "on-surface": "#e1e2e5",
+                    "surface-bright": "#37393c",
+                    "tertiary-container": "#00b2d0",
+                    "tertiary-fixed": "#acedff",
+                    "outline": "#334155",
+                    "outline-variant": "#3c4a42",
+                    "error": "#ffb4ab",
+                    "inverse-surface": "#e1e2e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1012px",
+                    "md": "16px",
+                    "section-gap-desktop": "64px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "section-gap-mobile": "40px"
+            },
+            "fontFamily": {
+                    "body-bold": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "stat-mono": ["JetBrains Mono"],
+                    "ip-address": ["JetBrains Mono"],
+                    "body-base": ["Inter"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "stat-mono": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "ip-address": ["18px", {"lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #111416;
+            color: #e1e2e5;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ghost-border {
+            border: 1px solid #334155;
+        }
+        .glow-hover:hover {
+            border-color: #4edea3;
+            box-shadow: 0 0 15px -2px rgba(78, 222, 163, 0.3);
+            transform: translateY(-4px);
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="font-body-base text-body-base">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface-dim border-b border-outline shadow-none">
+<nav class="max-w-[1012px] mx-auto flex justify-between items-center px-lg py-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-md">shield_with_heart</span>
+<span class="font-display-lg text-[24px] lg:text-display-lg text-primary tracking-tighter uppercase leading-none">MINOX</span>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest" href="#">ГЛАВНАЯ</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps uppercase tracking-widest" href="#">РЕЖИМЫ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest" href="#">МАГАЗИН</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest" href="#">ПРАВИЛА</a>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-body-bold text-body-bold hover:bg-surface-container-highest transition-all duration-300 active:scale-95">
+            ИГРАТЬ
+        </button>
+</nav>
+</header>
+<main class="max-w-[1012px] mx-auto px-lg py-section-gap-desktop">
+<!-- Hero / Headline -->
+<section class="mb-xl text-center md:text-left">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-sm">ИГРОВЫЕ РЕЖИМЫ</h1>
+<p class="text-on-surface-variant max-w-2xl font-body-base text-body-base">Выберите свой путь на MINOX NETWORK. Мы предлагаем тщательно настроенные миры для любого стиля игры — от мирного созидания до сурового выживания.</p>
+</section>
+<!-- IP Widget -->
+<div class="mb-section-gap-desktop bg-surface-container p-lg rounded-xl ghost-border flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<div class="w-3 h-3 bg-primary rounded-full status-pulse"></div>
+<span class="font-ip-address text-ip-address text-on-surface tracking-wider">minox.mineserver.xyz</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">1,420 Игроков Онлайн</span>
+<button class="bg-surface-container-highest hover:bg-outline transition-colors p-sm rounded-lg flex items-center gap-xs" onclick="navigator.clipboard.writeText('minox.mineserver.xyz')">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span class="font-label-caps text-label-caps uppercase">Копировать IP</span>
+</button>
+</div>
+</div>
+<!-- Modes Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Survival Card -->
+<div class="bg-surface p-lg rounded-xl ghost-border glow-hover transition-all duration-300 flex flex-col h-full">
+<div class="mb-lg h-48 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsSM1iVDwK2QtQicIj1oes7mNU5kKTfcARlaoYiM8_q_ekBS3zONS49a0hMSJ5ChCZx6LaT4CJaMrxhefkAesc1o6IaJeEW5JtSEKGrg6tR8fF7eUqY1L1KaHs2lzN8kfb84WWW7b_7TQFDF9tSSiQhC9IC5e3DgkKA1wJ-9XBhue_gFBYxFWLx6v6iEUaF3PfVDZy0MhDxOe_fHbcCG0gTsNvsSDPaZYyx742gm0xzNnZCAFuf6Dt')"></div>
+<span class="absolute top-md right-md z-20 bg-primary/20 text-primary px-sm py-xs rounded-full font-label-caps text-[10px] uppercase border border-primary/30 flex items-center gap-xs">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 842 Онлайн
+                </span>
+</div>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary text-headline-md">park</span>
+<h3 class="font-headline-md text-headline-md">Survival</h3>
+</div>
+<p class="text-on-surface-variant font-body-base text-body-base mb-xl flex-grow">Ванильное выживание с минимальными дополнениями. Экономика под управлением игроков, приватные территории и стабильный TPS для комфортной игры.</p>
+<button class="w-full bg-primary text-on-primary-container py-md rounded-lg font-body-bold text-body-bold hover:brightness-110 active:scale-98 transition-all">
+                ВЫБРАТЬ РЕЖИМ
+            </button>
+</div>
+<!-- SkyBlock Card -->
+<div class="bg-surface p-lg rounded-xl ghost-border glow-hover transition-all duration-300 flex flex-col h-full">
+<div class="mb-lg h-48 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAJNOjzusNrEXaa3axO3fCcxPjvalDe0dk3rw2ZRiy5gVOtvlFO3Xnj8zr6okXcwVGBkf9zZENsohqqiE23GJJb49j8_Xs9fAcPTWNCBHSieEd6xGM0LICa77z9kxSX-ds7RRsSPOfoNt8RnaJVqKpWRx5DmWSWdN3X5sRv11wh7y7cDYBNdYzd2NovBP9VyLAHoxPo-ZyyU3qtb5PbAAkhyGrkC0RExF9Ur7uhbj9L2qIh4YqObFg')"></div>
+<span class="absolute top-md right-md z-20 bg-secondary/20 text-secondary px-sm py-xs rounded-full font-label-caps text-[10px] uppercase border border-secondary/30 flex items-center gap-xs">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> 415 Онлайн
+                </span>
+</div>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-secondary text-headline-md">cloud</span>
+<h3 class="font-headline-md text-headline-md">SkyBlock</h3>
+</div>
+<p class="text-on-surface-variant font-body-base text-body-base mb-xl flex-grow">Начните с маленького острова и постройте целую империю. Уникальные генераторы руды, система квестов и регулярные ивенты.</p>
+<button class="w-full bg-secondary text-on-secondary py-md rounded-lg font-body-bold text-body-bold hover:brightness-110 active:scale-98 transition-all">
+                ВЫБРАТЬ РЕЖИМ
+            </button>
+</div>
+<!-- Creative Card -->
+<div class="bg-surface p-lg rounded-xl ghost-border glow-hover transition-all duration-300 flex flex-col h-full">
+<div class="mb-lg h-48 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNnUEFIDuq1fGOwm-bibESGG27AZGL7ZLUVRgxEKxQDXgPfFv1-xXbH7055OCXo14yCI3wpv49vHZ7eqGQ98ux-rZGk9CdY3Gy-OL7k3mo7vWRvzJex6j0oSL3V42blZSaRj5Vae6PBQJsNtrTfyO2hRxQjTWLFGyiTE-K-KK_v-iywb06kL4dLJo4iO-rSVUrew_Zj2L18BKbRIfGqKbK1ULYQ8GkpBlKTYPUOM2vwzlPfDCfpLB2')"></div>
+<span class="absolute top-md right-md z-20 bg-tertiary/20 text-tertiary px-sm py-xs rounded-full font-label-caps text-[10px] uppercase border border-tertiary/30 flex items-center gap-xs">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> 163 Онлайн
+                </span>
+</div>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-tertiary text-headline-md">palette</span>
+<h3 class="font-headline-md text-headline-md">Creative</h3>
+</div>
+<p class="text-on-surface-variant font-body-base text-body-base mb-xl flex-grow">Мир без ограничений. Огромные плоты для застроек, доступ к WorldEdit и возможность продемонстрировать свои лучшие билды сообществу.</p>
+<button class="w-full border border-outline text-on-surface py-md rounded-lg font-body-bold text-body-bold hover:bg-surface-container-highest active:scale-98 transition-all">
+                ВЫБРАТЬ РЕЖИМ
+            </button>
+</div>
+</div>
+<!-- Featured Section (Bento Style) -->
+<section class="mt-section-gap-desktop grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="md:col-span-2 bg-surface-container rounded-xl p-lg ghost-border relative overflow-hidden group">
+<div class="relative z-10">
+<span class="text-primary font-label-caps text-label-caps uppercase mb-sm block">ОБНОВЛЕНИЕ</span>
+<h2 class="font-headline-md text-headline-md mb-md">Новый сезон SkyBlock уже здесь</h2>
+<p class="text-on-surface-variant mb-lg">Мы полностью переработали систему торговли и добавили более 50 новых квестов. Присоединяйтесь прямо сейчас.</p>
+<a class="inline-flex items-center gap-xs text-primary font-body-bold hover:gap-sm transition-all" href="#">Узнать подробнее <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-xl p-lg ghost-border text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[48px] mb-sm">shopping_cart</span>
+<span class="font-headline-md text-headline-md text-secondary mb-xs">Магазин</span>
+<p class="text-on-surface-variant text-sm">Уникальные скины и привилегии</p>
+</div>
+<div class="bg-surface-container-high rounded-xl p-lg ghost-border text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[48px] mb-sm">groups</span>
+<span class="font-headline-md text-headline-md text-tertiary mb-xs">Discord</span>
+<p class="text-on-surface-variant text-sm">Общайся с комьюнити</p>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Mobile only) -->
+<div class="fixed inset-0 z-[60] bg-black/60 hidden md:hidden" id="mobile-nav">
+<aside class="h-full w-64 bg-surface flex flex-col gap-sm p-md border-r border-outline shadow-xl transition-transform -translate-x-full" id="drawer-content">
+<div class="flex justify-between items-center mb-lg">
+<span class="font-display-lg text-primary text-[20px] uppercase">MINOX</span>
+<button class="text-on-surface-variant" onclick="toggleMobileNav()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg p-md flex items-center gap-md" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps uppercase tracking-widest">ГЛАВНАЯ</span>
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-lg font-bold p-md flex items-center gap-md" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-label-caps uppercase tracking-widest">РЕЖИМЫ</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg p-md flex items-center gap-md" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-caps uppercase tracking-widest">МАГАЗИН</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg p-md flex items-center gap-md" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-caps uppercase tracking-widest">ПРАВИЛА</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg p-md flex items-center gap-md" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-caps uppercase tracking-widest">FAQ</span>
+</a>
+</aside>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-section-gap-desktop bg-surface-container-lowest border-t border-outline">
+<div class="max-w-[1012px] mx-auto flex flex-col md:flex-row justify-between items-center py-xl px-lg gap-xl">
+<div class="text-center md:text-left">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-xs">MINOX NETWORK</h4>
+<p class="text-on-surface-variant text-sm max-w-xs">© 2024 MINOX NETWORK. НЕ ЯВЛЯЕТСЯ ОФИЦИАЛЬНЫМ ПРОДУКТОМ MINECRAFT. МЫ НЕ СВЯЗАНЫ С MOJANG AB.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="text-on-surface-variant hover:text-on-surface font-body-base text-body-base transition-colors opacity-80 hover:opacity-100" href="#">Условия использования</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-base text-body-base transition-colors opacity-80 hover:opacity-100" href="#">Политика конфиденциальности</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-base text-body-base transition-colors opacity-80 hover:opacity-100" href="#">Discord</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-base text-body-base transition-colors opacity-80 hover:opacity-100" href="#">Поддержка</a>
+</div>
+</div>
+</footer>
+<script>
+    function toggleMobileNav() {
+        const nav = document.getElementById('mobile-nav');
+        const drawer = document.getElementById('drawer-content');
+        if (nav.classList.contains('hidden')) {
+            nav.classList.remove('hidden');
+            setTimeout(() => {
+                drawer.classList.remove('-translate-x-full');
+            }, 10);
+        } else {
+            drawer.classList.add('-translate-x-full');
+            setTimeout(() => {
+                nav.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mousedown', () => {
+            button.classList.add('scale-95');
+        });
+        button.addEventListener('mouseup', () => {
+            button.classList.remove('scale-95');
+        });
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('scale-95');
+        });
+    });
+</script>
+</body></html>

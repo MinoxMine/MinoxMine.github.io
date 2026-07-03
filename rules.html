@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001f26",
+                    "on-secondary-container": "#5b3800",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#10b981",
+                    "surface": "#161a1d",
+                    "on-background": "#e1e2e5",
+                    "surface-tint": "#4edea3",
+                    "on-primary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "on-primary": "#003824",
+                    "surface-variant": "#323537",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "surface-container": "#1d2022",
+                    "on-tertiary-container": "#003f4b",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#272a2c",
+                    "primary": "#4edea3",
+                    "error-redstone": "#ef4444",
+                    "surface-dim": "#111416",
+                    "background": "#111416",
+                    "on-surface-variant": "#bbcabf",
+                    "surface-container-low": "#191c1e",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "surface-container-highest": "#323537",
+                    "on-primary-fixed-variant": "#005236",
+                    "surface-container-lowest": "#0c0f11",
+                    "primary-fixed": "#6ffbbe",
+                    "on-tertiary": "#003640",
+                    "primary-fixed-dim": "#4edea3",
+                    "secondary": "#ffb95f",
+                    "inverse-on-surface": "#2e3133",
+                    "secondary-fixed": "#ffddb8",
+                    "on-secondary-fixed": "#2a1700",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "on-secondary": "#472a00",
+                    "tertiary": "#4cd7f6",
+                    "on-error": "#690005",
+                    "on-primary-container": "#00422b",
+                    "inverse-primary": "#006c49",
+                    "secondary-container": "#ee9800",
+                    "on-surface": "#e1e2e5",
+                    "surface-bright": "#37393c",
+                    "tertiary-container": "#00b2d0",
+                    "tertiary-fixed": "#acedff",
+                    "outline": "#334155",
+                    "outline-variant": "#3c4a42",
+                    "error": "#ffb4ab",
+                    "inverse-surface": "#e1e2e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1012px",
+                    "md": "16px",
+                    "section-gap-desktop": "64px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "section-gap-mobile": "40px"
+            },
+            "fontFamily": {
+                    "body-bold": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "stat-mono": ["JetBrains Mono"],
+                    "ip-address": ["JetBrains Mono"],
+                    "body-base": ["Inter"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "stat-mono": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "ip-address": ["18px", {"lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.2s ease-in;
+            opacity: 0;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 2000px;
+            opacity: 1;
+        }
+        .accordion-item.active .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .ghost-border {
+            border: 1px solid #334155;
+        }
+        .ghost-border:hover {
+            border-color: #4edea3;
+            box-shadow: 0 0 10px -2px rgba(78, 222, 163, 0.3);
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-base">
+<!-- TopAppBar -->
+<header class="bg-surface-dim dark:bg-surface-dim w-full sticky top-0 z-50 border-b border-outline shadow-none">
+<div class="max-w-[1012px] mx-auto flex justify-between items-center px-lg py-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<span class="font-display-lg text-headline-md text-primary tracking-tighter uppercase">MINOX</span>
+</div>
+<nav class="hidden md:flex gap-xl">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Главная</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Режимы</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Магазин</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Правила</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</nav>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-body-bold hover:brightness-110 active:scale-95 transition-all">
+                ИГРАТЬ СЕЙЧАС
+            </button>
+</div>
+</header>
+<main class="max-w-[1012px] mx-auto px-md md:px-lg py-xl">
+<!-- Hero Section -->
+<section class="mb-section-gap-desktop text-center md:text-left relative overflow-hidden rounded-xl p-xl bg-surface-container border border-outline">
+<div class="relative z-10">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-md uppercase">ПРАВИЛА СЕРВЕРА</h1>
+<p class="font-body-base text-on-surface-variant max-w-2xl">
+                    Присоединяясь к MINOX NETWORK, вы соглашаетесь соблюдать следующие правила. Эти правила обеспечивают честную, конкурентную и технически стабильную среду для всех игроков. Незнание правил не освобождает от ответственности.
+                </p>
+</div>
+</section>
+<!-- Rules Content (Accordion Style) -->
+<div class="space-y-md">
+<!-- Category 1: General Rules -->
+<div class="accordion-item active ghost-border rounded-xl bg-surface-container transition-all overflow-hidden" id="category-general">
+<button class="w-full flex items-center justify-between p-lg text-left focus:outline-none" onclick="toggleAccordion('category-general')">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+<h2 class="font-headline-md text-headline-md">Общие правила</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform chevron-icon">expand_more</span>
+</button>
+<div class="accordion-content px-lg pb-lg">
+<div class="grid md:grid-cols-2 gap-lg pt-md border-t border-outline-variant">
+<div class="space-y-md">
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-stat-mono text-primary text-sm mb-xs block">1.1</span>
+<h3 class="font-body-bold mb-xs">Регистрация и идентификация</h3>
+<p class="text-on-surface-variant text-sm">Одному игроку разрешен только один аккаунт. Мультиаккаунтинг для обхода банов или фарма ресурсов строго запрещен.</p>
+</div>
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-stat-mono text-primary text-sm mb-xs block">1.2</span>
+<h3 class="font-body-bold mb-xs">Уважение к персоналу</h3>
+<p class="text-on-surface-variant text-sm">Решения, принятые администрацией MINOX, являются окончательными. Оскорбление сотрудников приведет к немедленному перманентному бану.</p>
+</div>
+</div>
+<div class="space-y-md">
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-stat-mono text-primary text-sm mb-xs block">1.3</span>
+<h3 class="font-body-bold mb-xs">Сообщение об ошибках</h3>
+<p class="text-on-surface-variant text-sm">Нашли баг? Немедленно сообщите о нем. Использование глитчей в личных целях считается нарушением 3-й степени.</p>
+</div>
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-stat-mono text-primary text-sm mb-xs block">1.4</span>
+<h3 class="font-body-bold mb-xs">Стороннее ПО</h3>
+<p class="text-on-surface-variant text-sm">Любое стороннее программное обеспечение, дающее несправедливое преимущество (автокликеры, макросы и т.д.), запрещено.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 2: Chat Behavior -->
+<div class="accordion-item ghost-border rounded-xl bg-surface-container transition-all overflow-hidden" id="category-chat">
+<button class="w-full flex items-center justify-between p-lg text-left focus:outline-none" onclick="toggleAccordion('category-chat')">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-3xl">chat</span>
+<h2 class="font-headline-md text-headline-md">Поведение в чате</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform chevron-icon">expand_more</span>
+</button>
+<div class="accordion-content px-lg pb-lg">
+<div class="space-y-md pt-md border-t border-outline-variant">
+<div class="flex flex-col md:flex-row gap-md items-start p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="bg-secondary/10 p-sm rounded">
+<span class="material-symbols-outlined text-secondary">warning</span>
+</div>
+<div>
+<h3 class="font-body-bold mb-xs">Нулевая терпимость: Токсичность</h3>
+<p class="text-on-surface-variant text-sm">Язык вражды, расизм или чрезмерная токсичность в публичных или частных каналах недопустимы. Первое нарушение: мут на 24ч. Второе: Перманентный бан.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-md">
+<div class="p-md rounded-lg border border-outline-variant">
+<h4 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Спам и Капс</h4>
+<p class="text-xs text-on-surface-variant">Не забивайте чат повторяющимися сообщениями или чрезмерным использованием заглавных букв. Соблюдайте чистоту общения.</p>
+</div>
+<div class="p-md rounded-lg border border-outline-variant">
+<h4 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Реклама</h4>
+<p class="text-xs text-on-surface-variant">Упоминание или продвижение других серверов Minecraft или внешних ссылок на Discord строго запрещено.</p>
+</div>
+<div class="p-md rounded-lg border border-outline-variant">
+<h4 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Личные данные</h4>
+<p class="text-xs text-on-surface-variant">Деанонимизация (доксинг) или распространение личной информации других игроков ведет к немедленному черному списку.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 3: Gameplay -->
+<div class="accordion-item ghost-border rounded-xl bg-surface-container transition-all overflow-hidden" id="category-gameplay">
+<button class="w-full flex items-center justify-between p-lg text-left focus:outline-none" onclick="toggleAccordion('category-gameplay')">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-tertiary text-3xl">swords</span>
+<h2 class="font-headline-md text-headline-md">Игровой процесс</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform chevron-icon">expand_more</span>
+</button>
+<div class="accordion-content px-lg pb-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg pt-md border-t border-outline-variant">
+<div class="bg-surface-container-high p-lg rounded-xl border border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h3 class="font-body-bold">Этика честной игры</h3>
+</div>
+<ul class="space-y-sm text-sm text-on-surface-variant">
+<li class="flex gap-sm"><span class="text-primary">•</span> Никакого гриферства в охраняемых зонах или технических секторах.</li>
+<li class="flex gap-sm"><span class="text-primary">•</span> Запрещен "Combat Log" (выход из игры во время PvP боя).</li>
+<li class="flex gap-sm"><span class="text-primary">•</span> Соблюдение лимитов на редстоун-схемы для обеспечения стабильности сервера.</li>
+</ul>
+</div>
+<div class="bg-surface-container-high p-lg rounded-xl border border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-error-redstone">dangerous</span>
+<h3 class="font-body-bold">Запрещенные действия</h3>
+</div>
+<ul class="space-y-sm text-sm text-on-surface-variant">
+<li class="flex gap-sm"><span class="text-error-redstone">•</span> Использование флай-хаков, X-Ray или киллауры.</li>
+<li class="flex gap-sm"><span class="text-error-redstone">•</span> Намеренное создание лаг-машин.</li>
+<li class="flex gap-sm"><span class="text-error-redstone">•</span> Мошенничество, связанное с торговлей за реальную валюту.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- IP Widget -->
+<section class="mt-section-gap-desktop p-xl rounded-2xl bg-surface-container-high border border-primary/30 flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="flex items-center gap-md">
+<div class="relative">
+<div class="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+<div class="absolute inset-0 w-4 h-4 bg-primary rounded-full blur-md opacity-50"></div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-xs">IP СЕРВЕРА</h4>
+<span class="font-ip-address text-ip-address text-primary">minox.mineserver.xyz</span>
+</div>
+</div>
+<button class="flex items-center gap-sm bg-surface-container-highest px-xl py-md rounded-lg font-body-bold text-on-surface border border-outline hover:border-primary transition-all active:scale-95 group" id="copy-ip">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">content_copy</span>
+                КОПИРОВАТЬ IP
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full mt-section-gap-desktop border-t border-outline">
+<div class="max-w-[1012px] mx-auto flex flex-col md:flex-row justify-between items-center py-xl px-lg gap-lg">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-headline-md text-on-surface mb-xs">MINOX NETWORK</span>
+<p class="font-body-base text-xs text-on-surface-variant opacity-60">© 2024 MINOX NETWORK. НЕ ЯВЛЯЕТСЯ ОФИЦИАЛЬНЫМ ПРОДУКТОМ MINECRAFT.</p>
+</div>
+<div class="flex gap-xl">
+<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Условия использования</a>
+<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Конфиденциальность</a>
+<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Discord</a>
+<a class="font-body-base text-on-surface-variant hover:text-on-surface transition-colors opacity-80 hover:opacity-100" href="#">Поддержка</a>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(id) {
+            const item = document.getElementById(id);
+            const isActive = item.classList.contains('active');
+            
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        }
+
+        // IP Copy Interaction
+        document.getElementById('copy-ip').addEventListener('click', function() {
+            const ip = 'minox.mineserver.xyz';
+            navigator.clipboard.writeText(ip).then(() => {
+                const originalText = this.innerHTML;
+                this.innerHTML = `<span class="material-symbols-outlined text-primary">done</span> СКОПИРОВАНО!`;
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>
